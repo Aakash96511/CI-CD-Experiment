@@ -57,3 +57,8 @@ jobs:
           tags: |
             aakash59421/ci-cd-flask-app:latest
             aakash59421/ci-cd-flask-app:${{ github.sha }}
+      - name: Trigger Render Deployment
+        if: github.event_name == 'push'
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: curl --fail --silent --show-error --request POST "$RENDER_DEPLOY_HOOK"
