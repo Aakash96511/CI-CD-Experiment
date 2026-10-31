@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return """
-    <h1>My CI/CD Pipeline Project</h1>
+    <h1>My CI/CD Pipeline Project - Version 2</h1>
     <h2>Application is running successfully!</h2>
     <p>Built using Python, Flask and Docker.</p>
     """
